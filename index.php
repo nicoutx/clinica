@@ -4,6 +4,8 @@
   INGENIERÍA EN INFORMÁTICA
 -->
 
+<!-- CONEXIÓN DE SESIÓN CON BASE DE DATOS -->
+
 <?php
   session_start();
 
