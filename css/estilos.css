@@ -1,0 +1,156 @@
+/* ESTILOS DE HEADER Y FOOTER
+Aquí se define el estilo para el header y footer, dejando ambos
+con el mismo color de fondo.
+Se define el relleno derecho e izquierdo del header.
+Se define el relleno superior e inferior del footer.
+*/
+
+header, footer{
+    background-color: #391d41;
+    text-align: center;
+    color:#FFFFFF;
+}
+
+header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container{
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+p{
+    text-align: justify;
+    line-height: 35px;
+}
+
+.row {
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.rounded{
+    width: 100%;
+}
+
+.rounded-circle{
+    width: 60%;
+}
+
+/* ESTILOS DE SECCIÓN SERVICIOS
+Aquí se detallan estilos específicos para sección servicios.
+Se define el fondo de color diferente para 2 DIV
+*/
+
+.nosotros{
+    font-size: 20px;
+}
+
+.ortodoncia{
+    background-color: #391d41;
+    font-size: 17px;
+    color: #FFFFFF;    
+}
+
+.endodoncia{
+    font-size: 14px;
+}
+
+.implantes{
+    background-color: #60269d;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+.covid{
+    font-size: 25px;
+}
+
+
+/* CSS PARA FORMULARIO DE VALIDACIÓN */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+form {
+    margin: 25px auto;
+    padding: 20px;
+    border: 3px solid #7288d2;
+    width: 500px;
+    background: #eee;
+    border-radius: 20px;    
+}
+
+.formulario{
+    text-align: center;
+    border-radius: 20rem;
+}
+ 
+label {
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+    font-size: 1.5rem;
+    font-family: 'Lato';
+}
+ 
+input {
+    border: 2px solid #ccc;
+    font-size: 1.3rem;
+    font-weight: 20;
+    font-family: 'Lato';
+    padding: 5px 20px;
+    border-radius: 20px;
+    text-align: center;
+}
+ 
+
+ 
+div.form-element {
+    align-content: center;
+    margin: 20px 0; 
+}
+ 
+button {
+    padding: 1px 20px;
+    font-size: 1.3rem;
+    font-family: 'Lato';
+    font-weight: 100;
+    background: #391d41;
+    color: white;
+    border-radius: 20px;
+}
+ 
+p.success,
+p.error {
+    color: white;
+    font-family: lato;
+    background: #391d41;
+    display: inline-block;
+    padding: 2px 10px;
+}
+ 
+p.error {
+    background: red;
+}
+
+.login {
+    background-color: #391d41;
+}
+
+/* ESTILOS SECCIONES */
+
+section{
+    padding: 24px 0px 53px 0px;
+}
