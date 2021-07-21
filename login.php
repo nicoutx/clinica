@@ -1,8 +1,9 @@
-<?php
-
-session_start(); ?>
-  
+<?php session_start(); ?>
+ 
+<!-- Conexión con Base de Datos --> 
 <?php require 'db.php'; ?>
+
+<!-- Comprobación Inicio de Sesión --> 
 
 <?php
 
@@ -73,7 +74,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
 </style>
 
 
-<!-- Custom styles for this template -->
+<!-- Formulario de Login -->
 <link href="css/login.css" rel="stylesheet">
 </head>
 
@@ -84,6 +85,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   <img class="mb-4" src="img/Logo-Web-colores.png" alt="">
   <h1 class="h3 mb-3 fw-normal"><b>Ingreso</b></h1>
   
+  <!-- Mensaje de Alerta --> 
   <?php if(!empty($message)): ?>
   <p> <?= $message ?></p>
   <?php endif; ?> 
@@ -112,6 +114,3 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
 </main>
 </body>
 </html>
-
-
-
