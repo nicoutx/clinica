@@ -1,3 +1,4 @@
+<!-- Conexión con Base de Datos --> 
 <?php
   require 'db.php';
 
@@ -16,7 +17,7 @@
     if ($stmt->execute()) {
       $message = 'Usuario creado de forma exitosa';
     } else {
-      $message = 'A ocurrido un error creando su contraseña';
+      $message = 'A ocurrido un error creando su cuenta';
     }
   }
 ?>
@@ -65,7 +66,7 @@
 </style>
 
 
-<!-- Custom styles for this template -->
+<!-- Formulario de Registro -->
 <link href="css/login.css" rel="stylesheet">
 
 </head>
@@ -77,6 +78,7 @@
 <img class="mb-4" src="img/Logo-Web-colores.png" alt="">
 <h1 class="h3 mb-3 fw-normal"><b>Crear Cuenta</b></h1>
 
+<!-- Mensaje de Alerta -->
 <?php if(!empty($message)): ?>
   <p> <?= $message ?></p>
 <?php endif; ?>
