@@ -5,22 +5,10 @@
 -->
 
 <?php
-  session_start();
-
-  require 'db.php';
-
-  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id_usuario, username, password FROM usuarios WHERE id_usuario = :id');
-    $records->bindParam(':id', $_SESSION['user_id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user = null;
-
-    if (count($results) > 0) {
-      $user = $results;
-    }
-  }
+      session_start(); 
+      $nombre = $_SESSION['user_id'];
+  
+      if(isset($_SESSION['user_id'])){
 ?>
 
 <html lang="en">
@@ -76,7 +64,7 @@
               </ul>
 
               <li class="nav-item">
-               <a>Hola</a> <?php echo $user['username']?>
+               <a>Hola</a> <?php echo $nombre?>
                <a class="nav-link" href="logout.php">Cerrar Sesión</a>
               </li>
             </li>
@@ -85,3 +73,11 @@
         </div>
       </nav>
     </header>
+    <?php 
+    }else{
+
+        header('Location: login.php');
+
+    }
+
+?>

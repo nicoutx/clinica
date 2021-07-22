@@ -15,7 +15,7 @@
     $stmt->bindParam(':email', $_POST['email']);
 
     if ($stmt->execute()) {
-      $message = 'Usuario creado de forma exitosa';
+      $message = '¡Usuario creado de forma exitosa!';
     } else {
       $message = 'A ocurrido un error creando su cuenta';
     }
@@ -80,7 +80,7 @@
 
 <!-- Mensaje de Alerta -->
 <?php if(!empty($message)): ?>
-  <p> <?= $message ?></p>
+  <p> <?= $message ?> <br> <a href="login.php">Iniciar Sesión</a> </p>
 <?php endif; ?>
 
 
@@ -113,7 +113,7 @@
 <button class="w-100 btn btn-lg btn-primary" type="submit">Registrar</button>
 <hr>
   <div class="text-center">
-    <a class="small" href="login.php">Iniciar Sesión</a>
+    <a href="login.php">Iniciar Sesión</a>
   </div>
 <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
 </form>

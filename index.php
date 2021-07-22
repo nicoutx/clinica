@@ -7,22 +7,15 @@
 <!-- CONEXIÓN DE SESIÓN CON BASE DE DATOS -->
 
 <?php
-  session_start();
+      session_start(); 
+      $nombre = $_SESSION['user_id'];
+  
+      if(isset($_SESSION['user_id'])){
 
-  require 'db.php';
+      $nosotros = $conn->prepare('SELECT titulo, contenido FROM info_pagina WHERE titulo = Nosotros');
+      
 
-  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT id_usuario, username, password FROM usuarios WHERE id_usuario = :id');
-    $records->bindParam(':id', $_SESSION['user_id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
 
-    $user = null;
-
-    if (count($results) > 0) {
-      $user = $results;
-    }
-  }
 ?>
 
 <html lang="en">
@@ -205,3 +198,11 @@
     -->
   </body>
 </html>
+<?php 
+    }else{
+
+        header('Location: login.php');
+
+    }
+
+?>

@@ -12,10 +12,11 @@
 <!-- Comprobación Inicio de Sesión --> 
 
 <?php
-
 if (isset($_SESSION['user_id'])) {
   header("Location: index.php");
 }
+
+$usuario = $_POST['user'];
 
 if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   $records = $conn->prepare('SELECT id_usuario, username, password FROM usuarios WHERE username = :user');
@@ -25,15 +26,14 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
 
   $message = '';
 
-  if (count($results) > 0 && password_verify($_POST['pass'], $results['password'])) {
-    $_SESSION['user_id'] = $results['id_usuario'];
+  if (password_verify($_POST['pass'], $results['password'])) {
+    $_SESSION['user_id'] = $results['username'];
     header("Location: index.php");
   }
   else {
-    $message = ('Diculpe, la clave/usuario no coinciden');
+    $message = ('La contraseña no es correcta. Compruébala');
   }
-}
-
+}    
 ?>
 
 <!DOCTYPE html>
@@ -113,7 +113,7 @@ if (!empty($_POST['user']) && !empty($_POST['pass'])) {
   <button class="w-100 btn btn-lg btn-primary" type="submit" name="login">Iniciar Sesión</button>
   <hr>
   <div class="text-center">
-    <a class="small" href="signup.php">Crear una cuenta!</a>
+    <a>¿No tienes una cuenta?</a> <a href="signup.php">Regístrate Aquí!</a>
   </div>
   <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
 </form>
